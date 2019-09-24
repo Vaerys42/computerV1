@@ -8,7 +8,7 @@ def check_char(char):
 
 def check_power(equation, length):
 	i = 0
-	while i < length:
+	while i < length - 3:
 		if (equation[i] == 'X'):
 			if (equation[i + 1] == '^'):
 				if (equation[i + 2] != '2' and equation[i + 2] != '1' and equation[i + 2] != '0'):
@@ -48,14 +48,15 @@ def checker(equation):
 	return True
 
 def reuniter(split_eq):
-	reunite_eq = []
+	reunite_eq = [3]
 	i = 0
 	while (i < len(split_eq)):
-		
+		if (split_eq[i][0] == 'X'):
+			
 
 def parser(equation):
 	if checker(sys.argv[1]) == False:
-		print("Bad character into the equation")
+		print("Equation not well formated")
 		sys.exit()
 	split_eq = spliter(sys.argv[1], len(sys.argv[1]))
 	print(len(split_eq))
