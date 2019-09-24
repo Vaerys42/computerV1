@@ -2,7 +2,7 @@ import sys
 
 def check_char(char):
 	ok = 0
-	if (char.isdigit() == False and char != '^' and char != "ˆ" and char != '.' and char != "*" and char != '-' and char != '+' and char != '=' and char != "X" and char != ' '):	
+	if (char.isdigit() == False and char != '^' and char != '.' and char != "*" and char != '-' and char != '+' and char != '=' and char != "X" and char != ' '):	
 		return False
 	return True
 
@@ -10,7 +10,7 @@ def check_power(equation, length):
 	i = 0
 	while i < length:
 		if (equation[i] == 'X'):
-			if (equation[i + 1] == 'ˆ' or equation[i + 1] == '^'):
+			if (equation[i + 1] == '^'):
 				if (equation[i + 2] != '2' and equation[i + 2] != '1' and equation[i + 2] != '0'):
 					if (int(equation[i + 2]) > 2):
 						print("Le degré de l'équation est trop élevé")
@@ -47,8 +47,15 @@ def checker(equation):
 		return False
 	return True
 
+def reuniter(split_eq):
+	reunite_eq = []
+	i = 0
+	while (i < len(split_eq)):
+		
+
 def parser(equation):
 	if checker(sys.argv[1]) == False:
 		print("Bad character into the equation")
 		sys.exit()
 	split_eq = spliter(sys.argv[1], len(sys.argv[1]))
+	print(len(split_eq))
