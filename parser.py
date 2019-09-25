@@ -8,11 +8,13 @@ def check_char(char):
 
 def check_power(equation, length):
 	i = 0
-	while i < length - 3:
-		if (equation[i] == 'X'):
+	while i < length:
+		if (i + 1 < length and equation[i] == 'X' and equation[i + 1] != ' '):
 			if (equation[i + 1] == '^'):
+				if i + 2 >= length:
+					return False
 				if (equation[i + 2] != '2' and equation[i + 2] != '1' and equation[i + 2] != '0'):
-					if (int(equation[i + 2]) > 2):
+					if (equation[i + 2].isdigit() and int(equation[i + 2]) > 2):
 						print("Le degré de l'équation est trop élevé")
 					return False
 			else:
@@ -47,12 +49,21 @@ def checker(equation):
 		return False
 	return True
 
+def get_value_before(split_eq, i):
+	length = len(split_eq)
+	if (i - 3 >= 0)
+
 def reuniter(split_eq):
 	reunite_eq = [3]
+	reunite_eq[0] = 0
+	reunite_eq[1] = 0
+	reunite_eq[2] = 0
 	i = 0
 	while (i < len(split_eq)):
 		if (split_eq[i][0] == 'X'):
-			
+			if (len(split_eq[i]) == 3 and int(split_eq[i][2]) == 2):
+				if (split_eq[i - 1][0] == '*'):
+					
 
 def parser(equation):
 	if checker(sys.argv[1]) == False:

@@ -1,5 +1,4 @@
 import sys
-
 from parser import parser
 
 if (len(sys.argv) != 2):
