@@ -35,8 +35,20 @@ def spliter(equation, length):
 			split_eq[j] += equation[i]
 			i += 1
 		j += 1
-	print(split_eq)
 	return split_eq
+
+def spliter_part2(eq):
+	factor_eq = []
+	j = 0
+	while (j < len(eq)):
+		tmp = []
+		while (j < len(eq) and (eq[j][0] != '+' and eq[j][0] != '-' and eq[j][0] != '=')):
+			tmp.append(eq[j])
+			j +=1
+		j += 1
+		factor_eq.append(tmp)
+	return factor_eq
+
 
 def checker(equation):
 	length = len(equation)
@@ -49,25 +61,10 @@ def checker(equation):
 		return False
 	return True
 
-def get_value_before(split_eq, i):
-	length = len(split_eq)
-	if (i - 3 >= 0)
-
-def reuniter(split_eq):
-	reunite_eq = [3]
-	reunite_eq[0] = 0
-	reunite_eq[1] = 0
-	reunite_eq[2] = 0
-	i = 0
-	while (i < len(split_eq)):
-		if (split_eq[i][0] == 'X'):
-			if (len(split_eq[i]) == 3 and int(split_eq[i][2]) == 2):
-				if (split_eq[i - 1][0] == '*'):
-					
-
 def parser(equation):
 	if checker(sys.argv[1]) == False:
 		print("Equation not well formated")
 		sys.exit()
 	split_eq = spliter(sys.argv[1], len(sys.argv[1]))
-	print(len(split_eq))
+	split_eq = spliter_part2(split_eq)
+	print(split_eq)
