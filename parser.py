@@ -42,10 +42,16 @@ def spliter_part2(eq):
 	j = 0
 	while (j < len(eq)):
 		tmp = []
+		neg = 0
+		if (j < len(eq) and eq[j] == '-'):
+			neg = 1
+		if (j!= 0):
+			j += 1
 		while (j < len(eq) and (eq[j][0] != '+' and eq[j][0] != '-' and eq[j][0] != '=')):
 			tmp.append(eq[j])
 			j +=1
-		j += 1
+		if neg == 1:
+			tmp[0] = '-'+ tmp[0]
 		factor_eq.append(tmp)
 	return factor_eq
 
