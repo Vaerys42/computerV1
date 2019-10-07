@@ -47,14 +47,15 @@ def spliter_part2(eq):
 			neg = 1
 		if (j!= 0):
 			j += 1
-		while (j < len(eq) and (eq[j][0] != '+' and eq[j][0] != '-' and eq[j][0] != '=')):
+		while (j < len(eq) and (eq[j][0] != '+' and eq[j][0] != '=')):
+			if (eq[j][0] == '-' and len(eq[j]) == 1):
+				break
 			tmp.append(eq[j])
 			j +=1
 		if neg == 1:
 			tmp[0] = '-'+ tmp[0]
 		factor_eq.append(tmp)
 	return factor_eq
-
 
 def checker(equation):
 	length = len(equation)
